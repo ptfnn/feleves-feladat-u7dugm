@@ -1,0 +1,20 @@
+﻿<Window x:Class="feleves_feladat.ItemEditorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:feleves_feladat"
+        mc:Ignorable="d"
+        Title="ItemEditorWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            <TextBox Text="Name" FontSize="24" Background="Beige" Margin="10 10 10 0" />
+            <TextBox Text="{Binding SelectedItem.Name, UpdateSourceTrigger=PropertyChanged}" x:Name="Name" Height="35" Margin="10 10 10 10" />
+            <TextBox Text="Type" FontSize="24" Background="Beige" Margin="10 10 10 0" />
+            <ComboBox ItemsSource="{Binding AvailableTypes}" Height="35" Margin="10 10 10 10" SelectedItem="{Binding SelectedItem.Type, Mode=TwoWay}" />
+            <TextBox Text="Price" FontSize="24" Background="Beige" Margin="10 10 10 0" />
+            <TextBox Text="{Binding SelectedItem.Price, UpdateSourceTrigger=PropertyChanged}" Height="35" Margin="10 10 10 10" x:Name="Price" />
+            <Button Content="Save" Background="Peru" FontWeight="ExtraBold" FontSize="24" Margin="10 10 10 10" Click="SaveButton_Click" />
+        </StackPanel>
+    </Grid>
+</Window>
